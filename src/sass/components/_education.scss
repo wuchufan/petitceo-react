@@ -1,0 +1,34 @@
+.education{
+  margin-bottom:15rem !important;
+}
+
+.system{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+
+    &__text{
+      width:80%;
+    }
+
+}
+
+
+.icon-wraper{
+  border-radius:50%;
+  background-color:$color-primary;
+  width:6rem;
+  height:6rem;
+
+
+}
+
+.icon{
+  display:inline-block;
+  font-size:3rem;
+  color:$color-white;
+  text-align: center;
+  line-height: 6.5rem;
+  width:100%;
+  height:100%;
+}

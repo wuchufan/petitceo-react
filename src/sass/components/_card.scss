@@ -1,0 +1,89 @@
+.card-container{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+
+  @include respond (tab-port){
+    flex-direction: column;
+  }
+
+
+}
+
+.card{
+  @include respond (tab-port){
+    margin-bottom:5rem;
+  }
+
+  flex-basis:24%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow:0 1.5rem 4rem rgba($color-black, .15);
+
+  &__button{
+    border-radius: 10rem;
+    padding:1rem;
+    border: 1px $color-grey-dark-2 solid;
+    transition:all .2s ease !important;
+
+    &:hover{
+      transform: translateY(-0.3rem);
+      &::after{
+        transform:scaleX(1.1) scaleY(1.6);
+        opacity:0;
+      }
+
+    }
+    &:active,
+    &:focus{
+      outline:none;
+      transform:translateY(0.1rem);
+    }
+
+  }
+
+  &__image-box{
+    position:relative;
+  }
+  &__white-screen{
+    position:absolute;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    background-color: rgba($color-white,0);
+    transition:background-color .2s ease;
+
+
+    &-element{
+      opacity:0;
+      transition:opacity .2s ease;
+      cursor:pointer;
+    }
+
+    &:hover{
+      background-color: rgba($color-white,0.5);
+
+      & .card__white-screen-element{
+        opacity:1;
+      }
+    }
+
+  }
+  &__image{
+    display: block;
+    width:100%;
+  }
+
+  &__text-box{
+    background-color:$color-white;
+    padding:2rem;
+    height:100%;
+  }
+}
