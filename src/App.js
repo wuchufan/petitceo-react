@@ -9,9 +9,14 @@ import Education from './components/Education/Education';
 import Book from './components/Book/Book';
 import Footer from './components/Footer/Footer';
 
+//redux
+import store from './store';
+import { Provider } from 'react-redux';
+
 function App() {
   return (
     <>
+    <Provider store={store}>
       <Navigation/>
       <Landing/>
       <About/>
@@ -20,6 +25,7 @@ function App() {
       <Courses/>
       <Book/>
       <Footer/>
+    </Provider>
     </>
   );
 }
